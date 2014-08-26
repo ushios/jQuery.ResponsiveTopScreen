@@ -64,11 +64,19 @@
 			var windowRatio = windowWidth / windowHeight;
 			var mediaRatio = mediaWidth / mediaHeight;
 			if (mediaRatio > windowRatio){
-				this.targetMediaElement.width(mediaWidth * ( windowHeight / mediaHeight ));
 				this.targetMediaElement.height(windowHeight);
+				this.targetMediaElement.width(mediaWidth * ( windowHeight / mediaHeight ));
+				this.targetMediaElement.css({
+					left: - ((this.targetMediaElement.width() - windowWidth)/2),
+					top: 0
+				});
 			}else{
 				this.targetMediaElement.width(windowWidth);
 				this.targetMediaElement.height(mediaHeight * ( windowWidth / mediaWidth ));
+				this.targetMediaElement.css({
+					left: 0,
+					top: - ((this.targetMediaElement.height() - windowHeight)/2)
+				});
 			}
 			
 		},
@@ -96,6 +104,7 @@
 				zIndex: -10
 			});
 
+			// show filter TODO:change optional
 			this.showGradientFilm();
 		},
 
