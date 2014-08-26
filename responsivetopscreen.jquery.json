@@ -1,0 +1,23 @@
+{
+  "name": "responsivetopscreen",
+  "version": "0.4.1",
+  "title": "jQuery Responsive top screen",
+  "author": {
+    "name": "Ushio Shugo",
+    "url": "http://ushio.me"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "bugs": "https://github.com/ushios/jQuery.ResponsiveTopScreen/issues",
+  "docs": "https://github.com/ushios/jQuery.ResponsiveTopScreen/blob/master/README.md",
+  "homepage": "https://github.com/ushios/jQuery.ResponsiveTopScreen",
+  "description": "image will be fullscreen.",
+  "keywords": ["image", "fullscreen", "responsive"],
+  "dependencies": {
+    "jquery": ">=2.1.1"
+  }
+}
