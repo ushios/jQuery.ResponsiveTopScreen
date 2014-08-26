@@ -1,6 +1,9 @@
 jQuery.ResponsiveTopScreen
 ===========================
 
+Change image tag to fullscreen.
+
+
 Usage
 ------
 
