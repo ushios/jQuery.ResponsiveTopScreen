@@ -128,7 +128,6 @@
 				background: "url(images/gradient-background.png) repeat-x left bottom"
 			});
 
-			console.log(filmElement);
 			this.targetElement.append(filmElement);
 			this.filmElement = filmElement;
 		}
