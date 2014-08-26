@@ -19,6 +19,11 @@
 		targetMediaElement: undefined,
 
 		/**
+		 * gradient element.
+		 */
+		filmElement: undefined,
+
+		/**
 		 * run
 		 * 
 		 * @params targetElement this element will be fullscreen.
@@ -52,13 +57,12 @@
 			// set target element size.
 			this.targetElement.width(windowWidth);
 			this.targetElement.height(windowHeight);
+			this.filmElement.width(windowWidth);
+			this.filmElement.height(windowHeight);
 
 			// set media element size.
 			var windowRatio = windowWidth / windowHeight;
 			var mediaRatio = mediaWidth / mediaHeight;
-
-			console.log(windowRatio, mediaRatio);
-
 			if (mediaRatio > windowRatio){
 				this.targetMediaElement.width(mediaWidth * ( windowHeight / mediaHeight ));
 				this.targetMediaElement.height(windowHeight);
@@ -91,6 +95,33 @@
 				position: "absolute",
 				zIndex: -10
 			});
+
+			this.showGradientFilm();
+		},
+
+		/**
+		 * showGradientScreen
+		 * show 
+		 */
+		showGradientFilm: function(){
+			var filmElement = jQuery("<div>");
+			var windowWidth = this.windowElement.width();
+			var windowHeight = this.windowElement.height();
+
+			filmElement.height(windowHeight);
+			filmElement.width(windowWidth);
+			filmElement.css({
+				display: "block",
+				margin: 0,
+				padding: 0,
+				position: "absolute",
+				zIndex: -5,
+				background: "url(images/gradient-background.png) repeat-x left bottom"
+			});
+
+			console.log(filmElement);
+			this.targetElement.append(filmElement);
+			this.filmElement = filmElement;
 		}
 	};
 	
