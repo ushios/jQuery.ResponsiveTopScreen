@@ -16,6 +16,24 @@ Usage
 
     <script type="text/javascript">
     $(function(){
-        $("#top-screen").responsiveTopScreen();
+        $("#top-screen").responsiveTopScreen({
+            screenFilterImage: "/images/gradiate.png" // optional, default undefined
+        });
     });
     </script>
+
+
+Options
+--------
+
+
+### optional
+
+###### screenFilterImage
+In sample. gradiate.png will be overlie on placekitten's image. 
+
+---
+
+Special thanks
+===============
+I love [Storehouse](https://www.storehouse.co/) and [placekitten](http://placekitten.com/)!

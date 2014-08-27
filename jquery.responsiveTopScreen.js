@@ -24,6 +24,11 @@
 		filmElement: undefined,
 
 		/**
+		 * options.
+		 */
+		options: undefined,
+
+		/**
 		 * run
 		 * 
 		 * @params targetElement this element will be fullscreen.
@@ -57,8 +62,10 @@
 			// set target element size.
 			this.targetElement.width(windowWidth);
 			this.targetElement.height(windowHeight);
-			this.filmElement.width(windowWidth);
-			this.filmElement.height(windowHeight);
+			if (this.options.screenFilterImage != undefined){
+				this.filmElement.width(windowWidth);
+				this.filmElement.height(windowHeight);
+			}
 
 			// set media element size.
 			var windowRatio = windowWidth / windowHeight;
@@ -104,8 +111,9 @@
 				zIndex: -10
 			});
 
-			// show filter TODO:change optional
-			this.showGradientFilm();
+			if (this.options.screenFilterImage != undefined){
+				this.showGradientFilm();
+			}
 		},
 
 		/**
@@ -130,6 +138,13 @@
 
 			this.targetElement.append(filmElement);
 			this.filmElement = filmElement;
+		},
+
+		/**
+		 * set options.
+		 */
+		setOptions: function(options){
+			this.options = options;
 		}
 	};
 	
@@ -143,16 +158,18 @@
 		var targetElement = jQuery(this);
 		
 		// Event start
-		topScreen = new ResponsiveTopScreen();
+		topScreen = new ResponsiveTopScreen(options);
+		topScreen.setOptions(options);
 		topScreen.run(targetElement);
 		
 		return this;
 	};
 	
 	/**
-	 * default settings.
+	 * default options.
+	 * @property screenFilterImage string put on top-screen image using `repeat-x left bottom`.
 	 */
 	jQuery.fn.responsiveTopScreen.defaults = {
-		
+		screenFilterImage: undefined
 	};
 })(jQuery);
