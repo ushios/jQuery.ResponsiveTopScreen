@@ -133,7 +133,7 @@
 				padding: 0,
 				position: "absolute",
 				zIndex: -5,
-				background: "url(images/gradient-background.png) repeat-x left bottom"
+				background: "url(" + this.options.screenFilterImage + ") repeat-x left bottom"
 			});
 
 			this.targetElement.append(filmElement);
