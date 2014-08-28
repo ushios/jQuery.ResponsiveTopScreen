@@ -101,7 +101,7 @@
 				position: "relative"
 			});
 
-			var targetMediaElement = targetElement.find(":first-child");
+			var targetMediaElement = targetElement.children(":first-child");
 			this.targetMediaElement = targetMediaElement;
 			targetMediaElement.css({
 				display: "block",
