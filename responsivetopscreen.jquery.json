@@ -1,7 +1,7 @@
 {
   "name": "responsivetopscreen",
-  "version": "0.1.0",
-  "title": "responsive full screen",
+  "version": "0.1.1",
+  "title": "jQuery.ResponsiveTopScreen",
   "author": {
     "name": "Ushio Shugo",
     "url": "http://ushio.me"
